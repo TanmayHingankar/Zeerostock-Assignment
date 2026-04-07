@@ -1,0 +1,107 @@
+[
+  {
+    "id": 1,
+    "productName": "Office Chair Executive",
+    "category": "Furniture",
+    "price": 150.00,
+    "supplier": "ABC Traders"
+  },
+  {
+    "id": 2,
+    "productName": "Desk Lamp LED",
+    "category": "Electronics",
+    "price": 45.50,
+    "supplier": "ABC Traders"
+  },
+  {
+    "id": 3,
+    "productName": "Notebook A4 Pack",
+    "category": "Stationery",
+    "price": 8.99,
+    "supplier": "Quick Supplies"
+  },
+  {
+    "id": 4,
+    "productName": "Pen Set Black",
+    "category": "Stationery",
+    "price": 2.50,
+    "supplier": "Quick Supplies"
+  },
+  {
+    "id": 5,
+    "productName": "Monitor 24 Inch",
+    "category": "Electronics",
+    "price": 280.00,
+    "supplier": "Global Imports"
+  },
+  {
+    "id": 6,
+    "productName": "Keyboard Mechanical",
+    "category": "Electronics",
+    "price": 95.75,
+    "supplier": "Global Imports"
+  },
+  {
+    "id": 7,
+    "productName": "Conference Table",
+    "category": "Furniture",
+    "price": 450.00,
+    "supplier": "Industrial Goods Ltd"
+  },
+  {
+    "id": 8,
+    "productName": "Office Cabinet",
+    "category": "Furniture",
+    "price": 320.50,
+    "supplier": "Industrial Goods Ltd"
+  },
+  {
+    "id": 9,
+    "productName": "Mouse Wireless",
+    "category": "Electronics",
+    "price": 35.99,
+    "supplier": "Premium Electronics"
+  },
+  {
+    "id": 10,
+    "productName": "USB Hub 4 Port",
+    "category": "Electronics",
+    "price": 19.99,
+    "supplier": "Premium Electronics"
+  },
+  {
+    "id": 11,
+    "productName": "Document Holder",
+    "category": "Stationery",
+    "price": 12.50,
+    "supplier": "ABC Traders"
+  },
+  {
+    "id": 12,
+    "productName": "Printer Inkjet",
+    "category": "Electronics",
+    "price": 199.99,
+    "supplier": "Quick Supplies"
+  },
+  {
+    "id": 13,
+    "productName": "Desk Chair Basic",
+    "category": "Furniture",
+    "price": 99.99,
+    "supplier": "Global Imports"
+  },
+  {
+    "id": 14,
+    "productName": "Filing Cabinet Metal",
+    "category": "Furniture",
+    "price": 280.00,
+    "supplier": "Industrial Goods Ltd"
+  },
+  {
+    "id": 15,
+    "productName": "Scanner Document",
+    "category": "Electronics",
+    "price": 550.00,
+    "supplier": "Premium Electronics"
+  }
+]

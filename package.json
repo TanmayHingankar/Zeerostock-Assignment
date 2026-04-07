@@ -1,0 +1,29 @@
+{
+  "name": "inventory-management-system",
+  "version": "1.0.0",
+  "description": "Complete inventory management and search system with SQLite database",
+  "main": "backend/server.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "dev": "nodemon backend/server.js",
+    "init-db": "node backend/db/initDB.js"
+  },
+  "keywords": [
+    "inventory",
+    "search",
+    "suppliers",
+    "express",
+    "sqlite"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "sqlite3": "^5.1.6",
+    "body-parser": "^1.20.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}

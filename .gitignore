@@ -1,0 +1,55 @@
+# Node modules
+node_modules/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build output
+dist/
+build/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# SQLite database file
+backend/db/inventory.db
+
+# Local environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# VS Code settings
+.vscode/
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+
+# Temporary folders
+repo_temp_clone/
+
+# Optional Mac metadata
+.AppleDouble
+.LSOverride
+
+# IDE directories
+.idea/
+
+# Lock files
+package-lock.json
+
+# npm ignore
+npm-debug.log*
+
+# Ignore dependency snapshot directories
+jspm_packages/
+
+# Test coverage
+coverage/

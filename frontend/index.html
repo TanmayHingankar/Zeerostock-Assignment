@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inventory Management System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container">
+      <h1 class="logo">📦 Inventory System</h1>
+      <ul class="nav-links">
+        <li><a href="#search-section" class="active">Search</a></li>
+        <li><a href="#database-section">Database</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Main Container -->
+  <div class="container">
+    <!-- ==================== PART A: SEARCH SECTION ==================== -->
+    <section id="search-section" class="section active-section">
+      <div class="section-header">
+        <h2>🔍 Part A: Inventory Search</h2>
+        <p>Search across all suppliers with advanced filters</p>
+      </div>
+
+      <!-- Search Form -->
+      <div class="card search-card">
+        <h3>Search Filters</h3>
+        
+        <div class="form-grid">
+          <!-- Product Name Search -->
+          <div class="form-group">
+            <label for="searchInput">Product Name</label>
+            <input 
+              type="text" 
+              id="searchInput" 
+              placeholder="e.g., chair, desk, monitor..."
+              class="input-field"
+            >
+            <small>Partial match (case-insensitive)</small>
+          </div>
+
+          <!-- Category Filter -->
+          <div class="form-group">
+            <label for="categoryFilter">Category</label>
+            <select id="categoryFilter" class="input-field">
+              <option value="">All Categories</option>
+            </select>
+          </div>
+
+          <!-- Min Price Filter -->
+          <div class="form-group">
+            <label for="minPriceInput">Min Price ($)</label>
+            <input 
+              type="number" 
+              id="minPriceInput" 
+              placeholder="0"
+              min="0"
+              step="0.01"
+              class="input-field"
+            >
+          </div>
+
+          <!-- Max Price Filter -->
+          <div class="form-group">
+            <label for="maxPriceInput">Max Price ($)</label>
+            <input 
+              type="number" 
+              id="maxPriceInput" 
+              placeholder="999999"
+              min="0"
+              step="0.01"
+              class="input-field"
+            >
+          </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="button-group">
+          <button id="searchBtn" class="btn btn-primary">
+            <span class="btn-icon">🔍</span> Search
+          </button>
+          <button id="resetBtn" class="btn btn-secondary">
+            <span class="btn-icon">✕</span> Reset Filters
+          </button>
+        </div>
+
+        <!-- Active Filters Badge -->
+        <div id="filterBadges" class="filter-badges"></div>
+      </div>
+
+      <!-- Loading State -->
+      <div id="loadingSpinner" class="loading-spinner hidden">
+        <div class="spinner"></div>
+        <p>Searching inventory...</p>
+      </div>
+
+      <!-- Results Section -->
+      <div id="resultsContainer" class="results-container">
+        <!-- Results table will be inserted here -->
+      </div>
+    </section>
+
+    <!-- ==================== PART B: DATABASE SECTION ==================== -->
+    <section id="database-section" class="section">
+      <div class="section-header">
+        <h2>🗄️ Part B: Database Management</h2>
+        <p>Manage suppliers and inventory with validation</p>
+      </div>
+
+      <!-- Database Tabs -->
+      <div class="tabs">
+        <button class="tab-btn active" data-tab="suppliers-tab">Suppliers</button>
+        <button class="tab-btn" data-tab="inventory-tab">Inventory</button>
+        <button class="tab-btn" data-tab="analytics-tab">Analytics</button>
+      </div>
+
+      <!-- Suppliers Tab -->
+      <div id="suppliers-tab" class="tab-content active">
+        <div class="grid-2">
+          <!-- Add Supplier Form -->
+          <div class="card">
+            <h3>Add New Supplier</h3>
+            <div class="form-group">
+              <label for="supplierName">Supplier Name</label>
+              <input 
+                type="text" 
+                id="supplierName" 
+                placeholder="e.g., ABC Traders"
+                class="input-field"
+              >
+            </div>
+            <div class="form-group">
+              <label for="supplierCity">City</label>
+              <input 
+                type="text" 
+                id="supplierCity" 
+                placeholder="e.g., Delhi"
+                class="input-field"
+              >
+            </div>
+            <button id="addSupplierBtn" class="btn btn-primary full-width">
+              ➕ Add Supplier
+            </button>
+          </div>
+
+          <!-- Suppliers List -->
+          <div class="card">
+            <h3>Active Suppliers</h3>
+            <div id="suppliersList" class="list-container">
+              <p class="empty-state">Loading suppliers...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Inventory Tab -->
+      <div id="inventory-tab" class="tab-content">
+        <div class="grid-2">
+          <!-- Add Inventory Form -->
+          <div class="card">
+            <h3>Add Inventory Item</h3>
+            
+            <div class="form-group">
+              <label for="inventorySupplier">Supplier</label>
+              <select id="inventorySupplier" class="input-field">
+                <option value="">Select Supplier</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="inventoryProduct">Product Name</label>
+              <input 
+                type="text" 
+                id="inventoryProduct" 
+                placeholder="e.g., Office Chair"
+                class="input-field"
+              >
+            </div>
+
+            <div class="form-group">
+              <label for="inventoryCategory">Category</label>
+              <select id="inventoryCategory" class="input-field">
+                <option value="">Select Category</option>
+                <option value="Electronics">Electronics</option>
+                <option value="Furniture">Furniture</option>
+                <option value="Stationery">Stationery</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="inventoryQuantity">Quantity</label>
+              <input 
+                type="number" 
+                id="inventoryQuantity" 
+                placeholder="0"
+                min="0"
+                class="input-field"
+              >
+            </div>
+
+            <div class="form-group">
+              <label for="inventoryPrice">Price ($)</label>
+              <input 
+                type="number" 
+                id="inventoryPrice" 
+                placeholder="0.00"
+                min="0.01"
+                step="0.01"
+                class="input-field"
+              >
+            </div>
+
+            <button id="addInventoryBtn" class="btn btn-primary full-width">
+              ➕ Add Item
+            </button>
+          </div>
+
+          <!-- Inventory List -->
+          <div class="card">
+            <h3>Inventory Items</h3>
+            <div id="inventoryList" class="list-container">
+              <p class="empty-state">Loading items...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Analytics Tab -->
+      <div id="analytics-tab" class="tab-content">
+        <div class="card">
+          <h3>📊 Inventory Summary by Supplier</h3>
+          <div id="analyticsList" class="analytics-container">
+            <p class="empty-state">Loading analytics...</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="toast"></div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>🚀 Inventory Management System | Built with Node.js + Express + SQLite</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

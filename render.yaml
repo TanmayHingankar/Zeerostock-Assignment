@@ -5,7 +5,4 @@ services:
     plan: free
     branch: main
     buildCommand: npm install
-    startCommand: npm start
-    env:
-      - key: NODE_ENV
-        value: production
+    startCommand: node backend/server.js

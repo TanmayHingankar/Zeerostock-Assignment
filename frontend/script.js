@@ -3,7 +3,7 @@
  * Handles all frontend logic for search and database management
  */
 
-const API_BASE_URL = 'http://localhost:5000';
+const API_BASE_URL = 'YOUR_RENDER_BACKEND_URL_HERE';
 
 // ============= STATE MANAGEMENT =============
 

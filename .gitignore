@@ -39,6 +39,9 @@ repo_temp_clone/
 .AppleDouble
 .LSOverride
 
+# Temporary workspace directories
+.sixth/
+
 # IDE directories
 .idea/
 
